@@ -615,7 +615,7 @@ class MarkersDrawer(FeatureReaderBase):
         cmap = matplotlib.cm.get_cmap("bwr")
         palette = [cmap(x) for x in np.linspace(0, 1, self.n_colors)]
         #palette = sns.color_palette("RdBu_r", self.n_colors)
-        palette = np.round(np.array(palette)*255).astype(np.int)
+        palette = np.round(np.array(palette) * 255).astype(int)
         self.palette = [QColor(*x) for x in palette]
 
 

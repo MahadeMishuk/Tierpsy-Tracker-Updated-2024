@@ -11,12 +11,20 @@ from PyQt5.QtCore import Qt
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
+#import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
+
+try:
+    plt.style.use(['seaborn', 'fast'])
+except OSError as e:
+    print(f"Warning: {e}")
+    plt.style.use('fast')  # Use a fallback style if seaborn is not available
+
 
 #plt.style.use(['default', 'fast'])
 #plt.style.use(['ggplot', 'fast'])
 #plt.style.use(['fivethirtyeight', 'fast'])
-plt.style.use(['seaborn', 'fast'])
+#plt.style.use(['seaborn', 'fast'])
 
 class PlotFeatures(QDialog):
     def __init__(self, 
